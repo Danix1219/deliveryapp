@@ -26,7 +26,7 @@ export default function ClientCart() {
   return (
     <div className="bg-gray-50 min-h-screen pb-36 font-sans relative animate-slide-up">
       
-      {/* MODAL DE ÉXITO - Posicionamiento corregido con flexbox estricto */}
+      {/* MODAL DE ÉXITO */}
       {isOrderComplete && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gray-900/40 backdrop-blur-sm animate-fade-in">
           <div className="bg-white rounded-[2.5rem] p-8 max-w-sm w-full text-center shadow-2xl animate-slide-up relative">
@@ -59,7 +59,6 @@ export default function ClientCart() {
         <div className="w-10"></div>
       </header>
 
-      {/* ...resto del contenido igual... */}
       {cart.length === 0 ? (
         <div className="flex flex-col items-center justify-center pt-32 px-5 text-center">
           <div className="bg-gray-100 p-8 rounded-full text-gray-300 mb-6 shadow-inner">
@@ -157,10 +156,16 @@ export default function ClientCart() {
 
       {cart.length > 0 && (
         <div className="fixed bottom-[80px] left-0 right-0 z-40 flex justify-center px-4 pointer-events-none">
-          <button onClick={handleCheckout} className="w-full max-w-sm md:max-w-md bg-gray-900 text-white py-4 px-6 rounded-full shadow-[0_15px_30px_-10px_rgba(0,0,0,0.5)] hover:bg-orange-600 transition-all active:scale-95 pointer-events-auto flex items-center justify-between group">
+          {/* FIX: DEL-42 Validación añadida para evitar cierre por total indefinido */}
+          <button 
+            onClick={() => {
+              if (total >= 0) handleCheckout();
+            }} 
+            className="w-full max-w-sm md:max-w-md bg-gray-900 text-white py-4 px-6 rounded-full shadow-[0_15px_30px_-10px_rgba(0,0,0,0.5)] hover:bg-orange-600 transition-all active:scale-95 pointer-events-auto flex items-center justify-between group"
+          >
             <span className="font-black text-sm tracking-wide">Confirmar pedido</span>
             <div className="flex items-center gap-2 bg-white/20 px-3 py-1.5 rounded-full">
-              <span className="font-black">${total.toFixed(2)}</span>
+              <span className="font-black">${total >= 0 ? total.toFixed(2) : '0.00'}</span>
               <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </div>
           </button>
