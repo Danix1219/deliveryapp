@@ -142,7 +142,7 @@ src/
 ## 1️⃣ Clonar el repositorio
 
 ```bash
-git clone https://github.com/TU-USUARIO/MKI-DELIVERY.git
+git clone https://github.com/Danix1219/deliveryapp.git
 ```
 
 ---
