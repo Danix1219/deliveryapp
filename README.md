@@ -1,53 +1,183 @@
-Veltrix Delivery Application
-Veltrix Delivery es una plataforma integral de gestión logística diseñada para optimizar la cadena de suministro en el sector de alimentos a domicilio. El sistema facilita la interacción entre clientes, restaurantes y repartidores, garantizando una gestión eficiente de pedidos, seguimiento en tiempo real y autenticación basada en roles (RBAC).
+<h1 align="center">🚀 MKI-DELIVERY APP</h1>
 
-Stack Tecnológico
-Framework: React
+<p align="center">
+  Plataforma logística moderna para gestión de pedidos, clientes y repartidores.
+</p>
 
-Build Tool: Vite
+<p align="center">
 
-Lenguaje: JavaScript
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwind-css)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel)
 
-Estilos: Tailwind CSS
+</p>
 
-Enrutamiento: React Router DOM
+---
 
-Gestión de Estado: React Context API
+# 📌 Descripción
 
-Despliegue: Vercel
+**MKI-DELIVERY** es una plataforma integral de gestión logística enfocada en el sector de delivery y alimentos a domicilio.
 
-Arquitectura del Proyecto
-El proyecto sigue un patrón de diseño basado en características (feature-based) para asegurar la escalabilidad del código:
+El sistema permite la interacción eficiente entre:
 
-/src/features/clientApp/: Módulos y layouts dedicados al flujo del consumidor final.
+- 👤 Clientes
+- 🏪 Restaurantes
+- 🛵 Repartidores
 
-/src/features/driverApp/: Módulos y layouts enfocados en la operatividad del repartidor.
+La plataforma incluye funcionalidades modernas como:
 
-/src/store/: Lógica centralizada para la gestión de estados globales, autenticación y persistencia.
+- ✅ Gestión de pedidos
+- ✅ Seguimiento en tiempo real
+- ✅ Autenticación basada en roles (RBAC)
+- ✅ Protección de rutas privadas
+- ✅ Persistencia de sesión
+- ✅ Arquitectura escalable
+- ✅ Diseño responsive
 
-/src/components/: Interfaz de usuario compartida y componentes atómicos.
+---
 
-/src/App.jsx: Configuración principal de las rutas y proveedores de contexto.
+# ✨ Features
 
-Instalación y Ejecución
-Para iniciar el proyecto en un entorno de desarrollo local, siga estos pasos:
+## 👤 Cliente
 
-Clonar el repositorio:
+- Visualización de pedidos
+- Seguimiento de entrega
+- Gestión de perfil
+- Navegación intuitiva
+- Interfaz responsive
 
-Bash
-git clone [URL_DEL_REPOSITORIO]
-Instalar dependencias:
+## 🛵 Repartidor
 
-Bash
+- Dashboard operativo
+- Gestión de entregas
+- Actualización de estado
+- Control de rutas
+
+## 🔐 Seguridad
+
+- RBAC (Role Based Access Control)
+- Validación de rutas privadas
+- Persistencia de sesión
+- Protección mediante layouts
+
+---
+
+# 🛠️ Stack Tecnológico
+
+| Tecnología | Uso |
+|---|---|
+| React | Framework principal |
+| Vite | Build Tool |
+| JavaScript | Lenguaje |
+| Tailwind CSS | Framework de estilos |
+| React Router DOM | Manejo de rutas |
+| Context API | Gestión global de estado |
+| Vercel | Hosting y despliegue |
+
+---
+
+# 📂 Arquitectura del Proyecto
+
+El proyecto implementa una arquitectura basada en características (**Feature-Based Architecture**) para asegurar:
+
+- Escalabilidad
+- Separación de responsabilidades
+- Reutilización de componentes
+- Mantenimiento sencillo
+
+---
+
+## 📁 Estructura General
+
+```bash
+src/
+│
+├── components/
+│   ├── common/
+│   ├── layouts/
+│   └── ui/
+│
+├── features/
+│   ├── clientApp/
+│   │   ├── pages/
+│   │   ├── components/
+│   │   └── routes/
+│   │
+│   └── driverApp/
+│       ├── pages/
+│       ├── components/
+│       └── routes/
+│
+├── store/
+│   ├── context/
+│   ├── reducers/
+│   └── services/
+│
+├── assets/
+│
+├── App.jsx
+│
+└── main.jsx
+```
+
+---
+
+# 📖 Explicación de Carpetas
+
+| Carpeta | Descripción |
+|---|---|
+| `components/` | Componentes reutilizables |
+| `features/clientApp` | Flujo del cliente |
+| `features/driverApp` | Flujo del repartidor |
+| `store/` | Estado global y autenticación |
+| `assets/` | Recursos estáticos |
+| `App.jsx` | Configuración principal |
+
+---
+
+# ⚙️ Instalación y Ejecución
+
+## 1️⃣ Clonar el repositorio
+
+```bash
+git clone https://github.com/TU-USUARIO/MKI-DELIVERY.git
+```
+
+---
+
+## 2️⃣ Entrar al proyecto
+
+```bash
+cd MKI-DELIVERY
+```
+
+---
+
+## 3️⃣ Instalar dependencias
+
+```bash
 npm install
-Ejecutar servidor de desarrollo:
+```
 
-Bash
+---
+
+## 4️⃣ Ejecutar servidor de desarrollo
+
+```bash
 npm run dev
-Configuración para Producción (Vercel)
-Para asegurar la correcta navegación en aplicaciones SPA (Single Page Application) alojadas en Vercel, es obligatorio incluir el archivo vercel.json en la raíz del proyecto para manejar el enrutamiento del lado del cliente:
+```
 
-JSON
+---
+
+# 🌐 Configuración para Producción (Vercel)
+
+Para asegurar el correcto funcionamiento del enrutamiento en aplicaciones SPA utilizando React Router DOM, se requiere agregar un archivo:
+
+## 📄 `vercel.json`
+
+```json
 {
   "rewrites": [
     {
@@ -56,15 +186,157 @@ JSON
     }
   ]
 }
-Sistema de Autenticación y Roles
-El sistema valida el acceso basándose en el rol del usuario, definido a través del dominio del correo electrónico durante el inicio de sesión.
+```
 
-Rol	Correo Electrónico	Contraseña	Ruta Principal
-Cliente	kevin@veltrix.com	123456	/client/home
-Repartidor	repartidor@veltrix.com	123456	/driver/dashboard
-Implementaciones de Seguridad
-Control de Acceso basado en Roles (RBAC): Se han implementado guardas de seguridad en los layouts mediante useEffect. Si un usuario intenta acceder a una ruta que no corresponde a su rol (ej. un cliente intentando acceder al dashboard de repartidor), el sistema ejecutará un cierre de sesión y redirección automática.
+---
 
-Persistencia de Sesión: El sistema implementa localStorage para preservar el estado de la sesión, evitando la pérdida de datos del usuario y la redirección forzada al login tras actualizar la página.
+# 🔐 Sistema de Autenticación
 
-Protección de rutas: La estructura de Outlet en los layouts junto con la lógica de autenticación centralizada garantiza que las rutas privadas solo sean accesibles mediante un token de sesión válido en el estado global.
+La aplicación implementa autenticación basada en roles (**RBAC**).
+
+---
+
+## 👥 Roles disponibles
+
+| Rol | Correo | Contraseña | Ruta Principal |
+|---|---|---|---|
+| Cliente | kevin@veltrix.com | 123456 | `/client/home` |
+| Repartidor | repartidor@veltrix.com | 123456 | `/driver/dashboard` |
+
+---
+
+# 🛡️ Implementaciones de Seguridad
+
+## ✅ Control de Acceso basado en Roles (RBAC)
+
+El sistema implementa validaciones automáticas de acceso utilizando:
+
+- Context API
+- React Router
+- Layouts protegidos
+- Validación de sesión
+
+Si un usuario intenta acceder a rutas no autorizadas:
+
+- ❌ Se cierra la sesión
+- ❌ Se limpia la persistencia
+- 🔄 Se redirecciona automáticamente
+
+---
+
+## 💾 Persistencia de Sesión
+
+La sesión del usuario se mantiene utilizando:
+
+```javascript
+localStorage
+```
+
+Beneficios:
+
+- Evita pérdida de sesión
+- Mantiene autenticación tras refrescar
+- Mejora experiencia de usuario
+
+---
+
+## 🔒 Protección de Rutas
+
+Las rutas privadas utilizan:
+
+- `Outlet`
+- `Navigate`
+- Validación de token
+- Estado global centralizado
+
+Esto garantiza que únicamente usuarios autenticados puedan acceder a vistas privadas.
+
+---
+
+# 🚀 Deploy
+
+Aplicación desplegada en:
+
+```bash
+https://TU-APP.vercel.app
+```
+
+---
+
+# 📸 Preview del Proyecto
+
+## 🔑 Login
+
+```md
+![Login](./screenshots/login.png)
+```
+
+---
+
+## 👤 Dashboard Cliente
+
+```md
+![Cliente](./screenshots/client-dashboard.png)
+```
+
+---
+
+## 🛵 Dashboard Repartidor
+
+```md
+![Driver](./screenshots/driver-dashboard.png)
+```
+
+---
+
+# 📈 Próximas Mejoras
+
+- [ ] Backend real con Node.js/.NET
+- [ ] Integración con base de datos
+- [ ] Tracking en tiempo real con WebSockets
+- [ ] Notificaciones push
+- [ ] Integración de pagos
+- [ ] Dashboard administrativo
+- [ ] Dark Mode
+- [ ] Geolocalización avanzada
+- [ ] Chat en tiempo real
+
+---
+
+# 🧪 Scripts Disponibles
+
+| Comando | Descripción |
+|---|---|
+| `npm run dev` | Inicia servidor de desarrollo |
+| `npm run build` | Genera build de producción |
+| `npm run preview` | Vista previa del build |
+| `npm install` | Instala dependencias |
+
+---
+
+# 📋 Requisitos del Sistema
+
+- Node.js v18+
+- npm v9+
+- Navegador moderno
+- Conexión a internet
+
+---
+
+# 👨‍💻 Autor
+
+## Kevin Daniel Martinez Granados
+
+Desarrollador Full Stack enfocado en aplicaciones modernas, arquitecturas escalables y soluciones web.
+
+---
+
+# 📄 Licencia
+
+Este proyecto se encuentra bajo la licencia MIT.
+
+---
+
+# ⭐ Estado del Proyecto
+
+🚧 Proyecto actualmente en desarrollo.
